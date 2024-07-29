@@ -1,0 +1,45 @@
+﻿@model List<PROYECTO_FINAL.Models.Foro>
+
+@{
+    ViewBag.Title = "Foro";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Lista de Foro</h4>
+            </div>
+            <div class="panel-body">
+                <a class="btn btn-success btn-sm" href="@Url.Action("Crear","Foro")" >Crear nuevo</a>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Comentario</th>
+                                <th style="width:150px"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (PROYECTO_FINAL.Models.Foro item in Model)
+                            {
+                            <tr>
+                                <td>@item.Titulo</td>
+                                <td>@item.Comentario</td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm"  href="@Url.Action("Editar","Foro", new {idforo = item.IdForo})">Editar</a>
+                                    <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar","Foro", new {idforo = item.IdForo}) ">Eliminar</a>
+                                </td>
+                            </tr>  
+                            }
+                        </tbody>   
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+

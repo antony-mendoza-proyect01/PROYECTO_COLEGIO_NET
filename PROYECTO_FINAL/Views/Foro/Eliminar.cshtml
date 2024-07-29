@@ -1,0 +1,31 @@
+﻿@model PROYECTO_FINAL.Models.Foro
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Nuevo Foro</h4>
+            </div>
+            <div class="panel-body">
+                <div class="alert alert-danger">
+                    ¿Desea Eliminar el Foro: @Html.DisplayTextFor(m => m.Titulo)?
+                </div>
+        
+                <form action="@Url.Action("Eliminar","Foro")" method="post">
+                    <input type="hidden" class="form-control" name="IdForo" value="@Html.DisplayTextFor(m=>m.IdForo)" />
+                    <br />
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-primary" href="@Url.Action("Foro","Foro")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

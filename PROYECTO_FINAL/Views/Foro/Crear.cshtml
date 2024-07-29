@@ -1,0 +1,35 @@
+﻿@model PROYECTO_FINAL.Models.Foro
+
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4 class="text-center">Nuevo Foro</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Crear","Foro")" method="post">
+                    <div class="form-group text-center mx-auto" >
+                        <label class=" mx-auto" >Titulo</label>
+                        <input type="text" class="form-control mx-auto" name="Titulo"/>
+                    </div>
+                    <div class="form-group text-center mx-auto">
+                        <label class=" mx-auto" >Comentario</label>
+                        <textarea class="form-control mx-auto" id="exampleFormControlTextarea1" rows="3" name="Comentario" ></textarea>
+                    </div>
+                    <br />
+                          <div class="text-center ">
+                            <button type="submit" class="btn btn-success">Crear</button>
+                            <a class="btn btn-danger" href="@Url.Action("Foro","Foro")">Volver</a>
+                       </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
